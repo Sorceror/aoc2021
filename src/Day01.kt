@@ -5,7 +5,8 @@ fun main() {
         return input
             .map { it.toInt() }
             .windowed(2)
-            .fold(0) { acc, ints -> if (ints[0] < ints[1]) acc + 1 else acc }
+            .map { it[0] < it[1] }
+            .count { it }
     }
 
     // count the number of times the sum of measurements in this sliding window increases from the previous sum
@@ -16,7 +17,8 @@ fun main() {
             .windowed(3)
             .map { it.sum() }
             .windowed(2)
-            .fold(0) { acc, ints -> if (ints[0] < ints[1]) acc + 1 else acc }
+            .map { it[0] < it[1] }
+            .count { it }
     }
 
     val testInput = readInput("Day01_test")
