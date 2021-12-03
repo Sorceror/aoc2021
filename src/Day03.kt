@@ -60,6 +60,6 @@ fun main() {
     check(part2(testInput) == 230)
 
     val input = readInput("Day03")
-    println(part1(input)) // 2954600
-    println(part2(input)) // 1662846
+    println(part1(input))
+    println(part2(input))
 }
